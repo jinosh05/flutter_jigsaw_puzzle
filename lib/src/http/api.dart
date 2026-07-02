@@ -1,7 +1,9 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 class Api {
   static String url = 'https://api.pexels.com/v1';
   static String image = url + '/curated';
   static Map<String, String> header = {
-    "Authorization": "QugmlStVlOdXwtgjHEsuY4eIL2PQZdLVmRJ8d1s8Qf0Kll7A8lmg6bAO"
+    "Authorization": dotenv.env['PEXELS_API_KEY'] ?? '',
   };
 }
