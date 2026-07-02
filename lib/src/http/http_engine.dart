@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 
@@ -72,6 +70,9 @@ abstract class HttpEngine {
         case DioExceptionType.unknown:
           throw HttpException(HttpExceptionType.other, message: error.message);
           break;
+        case DioExceptionType.transformTimeout:
+          // TODO: Handle this case.
+          throw UnimplementedError();
       }
     } else {
       throw HttpException(HttpExceptionType.responseError,
