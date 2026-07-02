@@ -1,0 +1,49 @@
+nodes: 510
+edges: 0
+Section: Corpus Check
+Section: Summary
+Section: Community Hubs (Navigation)
+Section: God Nodes (most connected - your core abstractions)
+Section: Surprising Connections (you probably didn't know these)
+Section: Communities
+  Sub: Community 0 - "UI Widgets & Components"
+  Sub: Community 1 - "Puzzle Collision Detection"
+  Sub: Community 2 - "App Lifecycle & Main Menu"
+  Sub: Community 3 - "HTTP/Network Engine (Dio)"
+  Sub: Community 4 - "Project Architecture & Docs"
+  Sub: Community 5 - "Games Services & Shared UI"
+  Sub: Community 6 - "Windows Platform Integration"
+  Sub: Community 7 - "App Lifecycle State Management"
+  Sub: Community 8 - "Confetti Animation Widget"
+  Sub: Community 9 - "Linux Build Configuration"
+  Sub: Community 10 - "HTTP Request Pipeline"
+  Sub: Community 11 - "Puzzle Collision Logic"
+  Sub: Community 12 - "Linux Application Entry Points"
+  Sub: Community 13 - "Level Selection Screen"
+  Sub: Community 14 - "Dio HTTP Client"
+  Sub: Community 15 - "macOS App Delegate"
+  Sub: Community 16 - "Responsive Screen Layout"
+  Sub: Community 17 - "macOS Plugin Registration"
+  Sub: Community 18 - "Windows Entry Points"
+  Sub: Community 19 - "macOS Unit Tests"
+  Sub: Community 20 - "App Icons & Assets"
+  Sub: Community 21 - "Community 21"
+  Sub: Community 22 - "Community 22"
+  Sub: Community 23 - "Community 23"
+  Sub: Community 24 - "Community 24"
+  Sub: Community 25 - "Community 25"
+  Sub: Community 26 - "Community 26"
+  Sub: Community 27 - "Community 27"
+  Sub: Community 28 - "Community 28"
+  Sub: Community 29 - "Community 29"
+  Sub: Community 30 - "Community 30"
+  Sub: Community 41 - "Community 41"
+  Sub: Community 42 - "Community 42"
+  Sub: Community 70 - "Community 70"
+  Sub: Community 71 - "Community 71"
+  Sub: Community 72 - "Community 72"
+  Sub: Community 73 - "Community 73"
+  Sub: Community 74 - "Community 74"
+  Sub: Community 75 - "Community 75"
+Section: Knowledge Gaps
+Section: Suggested Questions

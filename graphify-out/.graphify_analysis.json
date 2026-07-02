@@ -1,0 +1,890 @@
+{
+  "communities": {
+    "0": [
+      "custom_name_dialog_dart",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_exception_dart_httpexception",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_exception_dart_tostring",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_jigsaw_grid_item_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_jigsaw_grid_item_dart_container",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_jigsaw_grid_item_dart_jigsawgriditem",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_piece_image_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_piece_image_dart_cachednetworkimage",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_piece_image_dart_center",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_piece_image_dart_container",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_piece_image_dart_pieceimage",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_animated_hide_widget_dart_animatedhidewidget",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_animated_hide_widget_dart_animatedhidewidgetstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_animated_hide_widget_dart_animatedopacity",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_animated_hide_widget_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_animated_hide_widget_dart_createstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_animated_hide_widget_dart_dispose",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_animated_hide_widget_dart_initstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_about_screen_dart_aboutscreen",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_about_screen_dart_aboutscreenstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_about_screen_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_about_screen_dart_container",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_about_screen_dart_exception",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_about_screen_dart_initstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_about_screen_dart_inkresponse",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_about_screen_dart_namechangeline",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_about_screen_dart_scaffold",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_about_screen_dart_settingsline",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_about_screen_dart_spacer",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_custom_name_dialog_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_custom_name_dialog_dart_customnamedialog",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_custom_name_dialog_dart_customnamedialogstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_custom_name_dialog_dart_didchangedependencies",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_custom_name_dialog_dart_dispose",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_custom_name_dialog_dart_scaletransition",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_custom_name_dialog_dart_showcustomnamedialog",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_settings_screen_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_settings_screen_dart_container",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_settings_screen_dart_exception",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_settings_screen_dart_scaffold",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_settings_screen_dart_settingsline",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_settings_screen_dart_settingsscreen",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_palette_dart_palette",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_snack_bar_dart_showsnackbar",
+      "lib_src_http_http_exception_dart",
+      "lib_src_level_selection_jigsaw_grid_item_dart",
+      "lib_src_level_selection_piece_image_dart",
+      "lib_src_play_session_animated_hide_widget_dart",
+      "lib_src_settings_about_screen_dart",
+      "lib_src_settings_custom_name_dialog_dart",
+      "lib_src_settings_settings_screen_dart",
+      "lib_src_style_palette_dart",
+      "lib_src_style_snack_bar_dart",
+      "package_cached_network_image_cached_network_image_dart",
+      "package_flutter_jigsaw_puzzle_src_level_selection_jigsaw_info_dart",
+      "package_flutter_jigsaw_puzzle_src_level_selection_piece_image_dart",
+      "package_flutter_material_dart",
+      "package_flutter_screenutil_flutter_screenutil_dart",
+      "package_flutter_services_dart",
+      "package_package_info_plus_package_info_plus_dart",
+      "package_provider_provider_dart",
+      "package_url_launcher_url_launcher_dart",
+      "settings_dart",
+      "style_palette_dart"
+    ],
+    "1": [
+      "collision_puzzle_collision_detection_dart",
+      "collision_puzzlehitbox_dart",
+      "dart_async",
+      "dart_math",
+      "dart_ui",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_collision_puzzlehitbox_dart_inactive",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_collision_puzzlehitbox_dart_puzzlehitbox",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_image_utils_dart_calculatescale",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_image_utils_dart_fitcenter",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_image_utils_dart_imageutils",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_image_utils_dart_vector2",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_jigsaw_game_dart_generatepositionbottom",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_jigsaw_game_dart_generatepositionleftright",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_jigsaw_game_dart_getpiece",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_jigsaw_game_dart_getshape",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_jigsaw_game_dart_jigsawgame",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_jigsaw_game_dart_ongameresize",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_piece_component_dart_calculatepoint",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_piece_component_dart_child",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_piece_component_dart_linkother",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_piece_component_dart_oncollision",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_piece_component_dart_oncollisionend",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_piece_component_dart_ondragend",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_piece_component_dart_ondragupdate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_piece_component_dart_onload",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_piece_component_dart_piececomponent",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_piece_component_dart_render",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_piece_component_dart_tostring",
+      "image_utils_dart",
+      "lib_src_play_session_collision_puzzlehitbox_dart",
+      "lib_src_play_session_jigsaw_image_utils_dart",
+      "lib_src_play_session_jigsaw_jigsaw_game_dart",
+      "lib_src_play_session_jigsaw_piece_component_dart",
+      "package_flame_audio_flame_audio_dart",
+      "package_flame_collisions_dart",
+      "package_flame_components_dart",
+      "package_flame_events_dart",
+      "package_flame_extensions_dart",
+      "package_flame_image_composition_dart",
+      "package_flutter_cache_manager_flutter_cache_manager_dart",
+      "package_flutter_jigsaw_puzzle_src_play_session_jigsaw_jigsaw_game_dart",
+      "piece_component_dart",
+      "piece_group_dart",
+      "shape_type_dart"
+    ],
+    "2": [
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_main_dart_applifecycleobserver",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_main_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_main_dart_mainmenuscreen",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_main_dart_myapp",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_main_dart_screenutilinit",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_main_dart_settingsscreen",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_main_dart_sputil",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_games_services_score_dart_score",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_api_dart_api",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_settings_dart_setplayername",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_settings_dart_settingscontroller",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_settings_dart_togglemuted",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_settings_dart_togglesoundson",
+      "lib_main_dart",
+      "lib_src_games_services_score_dart",
+      "lib_src_http_api_dart",
+      "lib_src_settings_settings_dart",
+      "package_flutter_dotenv_flutter_dotenv_dart",
+      "package_flutter_easyloading_flutter_easyloading_dart",
+      "package_flutter_foundation_dart",
+      "package_flutter_jigsaw_puzzle_src_loading_selection_loading_selection_screen_dart",
+      "package_flutter_jigsaw_puzzle_src_settings_about_screen_dart",
+      "package_flutter_jigsaw_puzzle_src_utils_sp_util_dart",
+      "persistence_settings_persistence_dart",
+      "src_app_lifecycle_app_lifecycle_dart",
+      "src_audio_audio_controller_dart",
+      "src_level_selection_jigsaw_info_dart",
+      "src_level_selection_level_selection_screen_dart",
+      "src_main_menu_main_menu_screen_dart",
+      "src_play_session_play_session_screen_dart",
+      "src_settings_persistence_local_storage_settings_persistence_dart",
+      "src_settings_persistence_settings_persistence_dart",
+      "src_settings_settings_dart",
+      "src_settings_settings_screen_dart",
+      "src_style_my_transition_dart",
+      "src_style_palette_dart",
+      "src_style_snack_bar_dart"
+    ],
+    "3": [
+      "dart_convert",
+      "dart_io",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_dio_engine_dart_checkrequest",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_dio_engine_dart_dioengine",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_dio_engine_dart_download",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_dio_engine_dart_get",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_dio_engine_dart_post",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_dio_engine_dart_setproxy",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_level_selection_screen_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_level_selection_screen_dart_buildselectgridsize",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_level_selection_screen_dart_container",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_level_selection_screen_dart_dispose",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_level_selection_screen_dart_gesturedetector",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_level_selection_screen_dart_levelselectionscreen",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_level_selection_screen_dart_levelselectionscreenstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_level_selection_screen_dart_scaffold",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_level_selection_screen_dart_showdetailsdialog",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_persistence_local_storage_settings_persistence_dart_localstoragesettingspersistence",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_utils_sp_util_dart_getjson",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_utils_sp_util_dart_sputil",
+      "http_engine_dart",
+      "jigsaw_grid_item_dart",
+      "jigsaw_info_dart",
+      "lib_src_http_dio_engine_dart",
+      "lib_src_level_selection_level_selection_screen_dart",
+      "lib_src_settings_persistence_local_storage_settings_persistence_dart",
+      "lib_src_utils_sp_util_dart",
+      "package_awesome_dialog_awesome_dialog_dart",
+      "package_cherry_toast_cherry_toast_dart",
+      "package_dio_dio_dart",
+      "package_dio_io_dart",
+      "package_flutter_jigsaw_puzzle_src_http_api_dart",
+      "package_flutter_jigsaw_puzzle_src_http_dio_client_dart",
+      "package_infinite_scroll_pagination_infinite_scroll_pagination_dart",
+      "package_shared_preferences_shared_preferences_dart",
+      "settings_persistence_dart"
+    ],
+    "4": [
+      "adsense_google_publisher",
+      "analytics_google_ga4",
+      "architecture_core_logic",
+      "architecture_platform_integration",
+      "architecture_presentation",
+      "claudemd_config",
+      "command_flutter_analyze",
+      "command_flutter_build_apk",
+      "command_flutter_build_web",
+      "command_flutter_run",
+      "command_flutter_test",
+      "concept_flame_game_widget",
+      "concept_puzzle_model",
+      "demo_online_browser",
+      "download_apk_binary",
+      "engine_flame",
+      "framework_flutter",
+      "icon_back_nav",
+      "icon_launcher_app",
+      "icon_restart",
+      "icon_settings",
+      "license_cc_by_40",
+      "license_mit",
+      "music_mr_smith",
+      "platform_android",
+      "platform_ios",
+      "platform_web",
+      "project_jigsaw_puzzle",
+      "readme_main",
+      "screenshot_puzzle_01",
+      "screenshot_puzzle_04",
+      "service_free_music_archive",
+      "source_pexels",
+      "web_pwa_manifest"
+    ],
+    "5": [
+      "animated_hide_widget_dart",
+      "games_services_score_dart",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_main_menu_main_menu_screen_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_main_menu_main_menu_screen_dart_iconbutton",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_main_menu_main_menu_screen_dart_mainmenuscreen",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_main_menu_main_menu_screen_dart_scaffold",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_main_menu_main_menu_screen_dart_text",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_play_session_screen_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_play_session_screen_dart_ignorepointer",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_play_session_screen_dart_initstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_play_session_screen_dart_playsessionscreen",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_play_session_screen_dart_playsessionscreenstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_play_session_screen_dart_showimage",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_play_session_screen_dart_showreset",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_my_transition_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_my_transition_dart_didupdatewidget",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_my_transition_dart_dispose",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_my_transition_dart_initstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_my_transition_dart_myreveal",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_my_transition_dart_myrevealstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_my_transition_dart_stack",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_my_transition_dart_statuslistener",
+      "jigsaw_jigsaw_game_dart",
+      "lib_src_main_menu_main_menu_screen_dart",
+      "lib_src_play_session_play_session_screen_dart",
+      "lib_src_style_my_transition_dart",
+      "package_file_file_dart",
+      "package_flame_game_dart",
+      "package_go_router_go_router_dart",
+      "package_lottie_lottie_dart",
+      "package_url_launcher_url_launcher_string_dart",
+      "settings_settings_dart",
+      "style_responsive_screen_dart"
+    ],
+    "6": [
+      "flutter_generated_plugin_registrant_registerplugins",
+      "runner_flutter_window_flutterwindow",
+      "runner_flutter_window_messagehandler",
+      "runner_flutter_window_oncreate",
+      "runner_flutter_window_ondestroy",
+      "runner_win32_window_create",
+      "runner_win32_window_destroy",
+      "runner_win32_window_enablefulldpisupportifavailable",
+      "runner_win32_window_getclientarea",
+      "runner_win32_window_gethandle",
+      "runner_win32_window_getthisfromhandle",
+      "runner_win32_window_getwindowclass",
+      "runner_win32_window_messagehandler",
+      "runner_win32_window_oncreate",
+      "runner_win32_window_ondestroy",
+      "runner_win32_window_scale",
+      "runner_win32_window_setchildcontent",
+      "runner_win32_window_setquitonclose",
+      "runner_win32_window_show",
+      "runner_win32_window_unregisterwindowclass",
+      "runner_win32_window_updatetheme",
+      "runner_win32_window_win32window",
+      "runner_win32_window_windowclassregistrar",
+      "runner_win32_window_windowclassregistrar_windowclassregistrar",
+      "runner_win32_window_wndproc",
+      "windows_flutter_generated_plugin_registrant_cc",
+      "windows_runner_flutter_window_cpp",
+      "windows_runner_flutter_window_h",
+      "windows_runner_win32_window_cpp"
+    ],
+    "7": [
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_app_lifecycle_app_lifecycle_dart_applifecycleobserver",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_app_lifecycle_app_lifecycle_dart_applifecycleobserverstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_app_lifecycle_app_lifecycle_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_app_lifecycle_app_lifecycle_dart_didchangeapplifecyclestate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_app_lifecycle_app_lifecycle_dart_dispose",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_app_lifecycle_app_lifecycle_dart_initstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_audio_controller_dart_attachlifecyclenotifier",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_audio_controller_dart_attachsettings",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_audio_controller_dart_audiocontroller",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_audio_controller_dart_changesong",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_audio_controller_dart_dispose",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_audio_controller_dart_handleapplifecycle",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_audio_controller_dart_musiconhandler",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_audio_controller_dart_mutedhandler",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_audio_controller_dart_playfirstsonginplaylist",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_audio_controller_dart_playsfx",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_audio_controller_dart_soundsonhandler",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_audio_controller_dart_startmusic",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_audio_controller_dart_stopallsound",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_audio_controller_dart_stopmusic",
+      "lib_src_app_lifecycle_app_lifecycle_dart",
+      "lib_src_audio_audio_controller_dart",
+      "package_audioplayers_audioplayers_dart",
+      "package_flutter_widgets_dart",
+      "package_logging_logging_dart",
+      "songs_dart",
+      "sounds_dart"
+    ],
+    "8": [
+      "dart_collection",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_confetti",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_confettipainter",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_confettistate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_custompaint",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_didupdatewidget",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_dispose",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_draw",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_initstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_paint",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_papersnipping",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_shouldrepaint",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_update",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_updatebounds",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_confetti_dart_vector",
+      "lib_src_style_confetti_dart"
+    ],
+    "9": [
+      "binary_game_template",
+      "bundled_plugins",
+      "dependency_gio",
+      "dependency_glib",
+      "dependency_gtk3",
+      "library_flutter_linux",
+      "library_flutter_windows",
+      "linux_cmakelists_build",
+      "linux_flutter_cmakelists",
+      "platform_linux",
+      "platform_windows",
+      "runtime_dwmapi",
+      "source_runner_windows",
+      "source_standard_cc",
+      "windows_cmakelists_build",
+      "windows_flutter_cmakelists",
+      "windows_runner_cmakelists"
+    ],
+    "10": [
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_engine_dart_addurltoken",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_engine_dart_cancelrequest",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_engine_dart_catcherror",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_engine_dart_checkrequest",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_engine_dart_download",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_engine_dart_get",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_engine_dart_getengine",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_engine_dart_httpengine",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_engine_dart_httpexception",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_engine_dart_post",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_engine_dart_removeurltoken",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_engine_dart_setproxy",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_http_engine_dart_unimplementederror",
+      "http_exception_dart",
+      "lib_src_http_http_engine_dart",
+      "package_connectivity_plus_connectivity_plus_dart"
+    ],
+    "11": [
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_collision_puzzle_collision_detection_dart_function",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_collision_puzzle_collision_detection_dart_handlecollision",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_collision_puzzle_collision_detection_dart_handlecollisionend",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_collision_puzzle_collision_detection_dart_handlecollisionstart",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_collision_puzzle_collision_detection_dart_puzzlecollisiondetection",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_collision_puzzle_collision_detection_dart_typecollision",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_jigsaw_piece_group_dart_piecegroup",
+      "lib_src_play_session_collision_puzzle_collision_detection_dart",
+      "lib_src_play_session_jigsaw_piece_group_dart",
+      "package_flame_geometry_dart",
+      "package_flutter_jigsaw_puzzle_src_play_session_collision_puzzlehitbox_dart",
+      "package_flutter_jigsaw_puzzle_src_play_session_jigsaw_piece_component_dart",
+      "package_flutter_jigsaw_puzzle_src_play_session_shape_type_dart"
+    ],
+    "12": [
+      "flutter_generated_plugin_registrant_fl_register_plugins",
+      "linux_flutter_generated_plugin_registrant_cc",
+      "linux_main_cc",
+      "linux_main_main",
+      "linux_my_application_cc",
+      "linux_my_application_my_application_activate",
+      "linux_my_application_my_application_class_init",
+      "linux_my_application_my_application_dispose",
+      "linux_my_application_my_application_init",
+      "linux_my_application_my_application_local_command_line",
+      "linux_my_application_my_application_new"
+    ],
+    "13": [
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_loading_selection_loading_selection_screen_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_loading_selection_loading_selection_screen_dart_container",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_loading_selection_loading_selection_screen_dart_initstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_loading_selection_loading_selection_screen_dart_loadingselectionscreen",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_loading_selection_loading_selection_screen_dart_loadingselectionscreenstate",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_loading_selection_loading_selection_screen_dart_scaffold",
+      "level_selection_jigsaw_info_dart",
+      "level_selection_piece_image_dart",
+      "lib_src_loading_selection_loading_selection_screen_dart"
+    ],
+    "14": [
+      "dio_engine_dart",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_dio_client_dart_dioclient",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_dio_client_dart_get",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_dio_client_dart_getinstance",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_http_dio_client_dart_post",
+      "lib_src_http_dio_client_dart",
+      "package_flutter_jigsaw_puzzle_src_http_http_engine_dart"
+    ],
+    "15": [
+      "flutterappdelegate",
+      "ios_runner_appdelegate_swift",
+      "macos_runner_appdelegate_swift",
+      "runner_appdelegate_appdelegate",
+      "runner_appdelegate_appdelegate_application",
+      "runner_appdelegate_appdelegate_applicationshouldterminateafterlastwindowclosed"
+    ],
+    "16": [
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_responsive_screen_dart_build",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_responsive_screen_dart_column",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_responsive_screen_dart_layoutbuilder",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_responsive_screen_dart_responsivescreen",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_style_responsive_screen_dart_row",
+      "lib_src_style_responsive_screen_dart"
+    ],
+    "17": [
+      "flutter_generatedpluginregistrant_registergeneratedplugins",
+      "macos_flutter_generatedpluginregistrant_swift",
+      "macos_runner_mainflutterwindow_swift",
+      "nswindow",
+      "runner_mainflutterwindow_mainflutterwindow",
+      "runner_mainflutterwindow_mainflutterwindow_awakefromnib"
+    ],
+    "18": [
+      "runner_main_wwinmain",
+      "runner_utils_createandattachconsole",
+      "runner_utils_getcommandlinearguments",
+      "runner_utils_utf8fromutf16",
+      "windows_runner_main_cpp",
+      "windows_runner_utils_cpp"
+    ],
+    "19": [
+      "ios_runnertests_runnertests_swift",
+      "macos_runnertests_runnertests_swift",
+      "runnertests_runnertests_runnertests",
+      "runnertests_runnertests_runnertests_testexample",
+      "xctestcase"
+    ],
+    "20": [
+      "android_launcher_icon",
+      "general_asset_icon",
+      "ios_app_icon",
+      "macos_app_icon",
+      "web_icons"
+    ],
+    "21": [
+      "ephemeral_flutter_lldb_helper_handle_new_rx_page",
+      "ephemeral_flutter_lldb_helper_lldb_init_module",
+      "ephemeral_flutter_lldb_helper_rationale_8",
+      "ios_flutter_ephemeral_flutter_lldb_helper_py"
+    ],
+    "22": [
+      "ios_runner_generatedpluginregistrant_m",
+      "runner_generatedpluginregistrant_generatedpluginregistrant",
+      "runner_generatedpluginregistrant_generatedpluginregistrant_registerwithregistry"
+    ],
+    "23": [
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_songs_dart_song",
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_songs_dart_tostring",
+      "lib_src_audio_songs_dart"
+    ],
+    "24": [
+      "android_app_src_main_java_io_flutter_plugins_generatedpluginregistrant_java",
+      "plugins_generatedpluginregistrant_generatedpluginregistrant",
+      "plugins_generatedpluginregistrant_generatedpluginregistrant_registerwith"
+    ],
+    "25": [
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_audio_sounds_dart_soundtypetovolume",
+      "lib_src_audio_sounds_dart"
+    ],
+    "26": [
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_jigsaw_category_dart_jigsawcategory",
+      "lib_src_level_selection_jigsaw_category_dart"
+    ],
+    "27": [
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_level_selection_jigsaw_info_dart_jigsawinfo",
+      "lib_src_level_selection_jigsaw_info_dart"
+    ],
+    "28": [
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_play_session_shape_type_dart_shape",
+      "lib_src_play_session_shape_type_dart"
+    ],
+    "29": [
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_version_dart_version",
+      "lib_src_settings_version_dart"
+    ],
+    "30": [
+      "home_jinosh_program_jigsaw_flutter_jigsaw_puzzle_lib_src_settings_persistence_settings_persistence_dart_settingspersistence",
+      "lib_src_settings_persistence_settings_persistence_dart"
+    ],
+    "31": [
+      "flutter_linux_fl_message_codec_g_declare_derivable_type",
+      "linux_flutter_ephemeral_flutter_linux_fl_message_codec_h"
+    ],
+    "32": [
+      "flutter_linux_fl_method_codec_g_declare_derivable_type",
+      "linux_flutter_ephemeral_flutter_linux_fl_method_codec_h"
+    ],
+    "33": [
+      "flutter_linux_fl_method_response_g_declare_derivable_type",
+      "linux_flutter_ephemeral_flutter_linux_fl_method_response_h"
+    ],
+    "34": [
+      "flutter_linux_fl_pixel_buffer_texture_g_declare_derivable_type",
+      "linux_flutter_ephemeral_flutter_linux_fl_pixel_buffer_texture_h"
+    ],
+    "35": [
+      "flutter_linux_fl_plugin_registrar_g_declare_interface",
+      "linux_flutter_ephemeral_flutter_linux_fl_plugin_registrar_h"
+    ],
+    "36": [
+      "flutter_linux_fl_plugin_registry_g_declare_interface",
+      "linux_flutter_ephemeral_flutter_linux_fl_plugin_registry_h"
+    ],
+    "37": [
+      "flutter_linux_fl_standard_message_codec_g_declare_derivable_type",
+      "linux_flutter_ephemeral_flutter_linux_fl_standard_message_codec_h"
+    ],
+    "38": [
+      "flutter_linux_fl_texture_g_declare_interface",
+      "linux_flutter_ephemeral_flutter_linux_fl_texture_h"
+    ],
+    "39": [
+      "flutter_linux_fl_texture_gl_g_declare_derivable_type",
+      "linux_flutter_ephemeral_flutter_linux_fl_texture_gl_h"
+    ],
+    "40": [
+      "flutter_linux_fl_texture_registrar_g_declare_interface",
+      "linux_flutter_ephemeral_flutter_linux_fl_texture_registrar_h"
+    ],
+    "41": [
+      "android_app_src_main_kotlin_com_example_flutter_jigsaw_puzzle_mainactivity_kt",
+      "flutter_jigsaw_puzzle_mainactivity_mainactivity"
+    ],
+    "42": [
+      "sfx_click_duplicate_wav",
+      "sfx_click_wav"
+    ],
+    "43": [
+      "ios_runner_runner_bridging_header_h"
+    ],
+    "44": [
+      "ios_runner_generatedpluginregistrant_h"
+    ],
+    "45": [
+      "linux_my_application_h"
+    ],
+    "46": [
+      "linux_flutter_generated_plugin_registrant_h"
+    ],
+    "47": [
+      "linux_flutter_ephemeral_flutter_linux_fl_application_h"
+    ],
+    "48": [
+      "linux_flutter_ephemeral_flutter_linux_fl_basic_message_channel_h"
+    ],
+    "49": [
+      "linux_flutter_ephemeral_flutter_linux_fl_binary_codec_h"
+    ],
+    "50": [
+      "linux_flutter_ephemeral_flutter_linux_fl_binary_messenger_h"
+    ],
+    "51": [
+      "linux_flutter_ephemeral_flutter_linux_fl_dart_project_h"
+    ],
+    "52": [
+      "linux_flutter_ephemeral_flutter_linux_fl_engine_h"
+    ],
+    "53": [
+      "linux_flutter_ephemeral_flutter_linux_fl_event_channel_h"
+    ],
+    "54": [
+      "linux_flutter_ephemeral_flutter_linux_fl_json_message_codec_h"
+    ],
+    "55": [
+      "linux_flutter_ephemeral_flutter_linux_fl_json_method_codec_h"
+    ],
+    "56": [
+      "linux_flutter_ephemeral_flutter_linux_fl_method_call_h"
+    ],
+    "57": [
+      "linux_flutter_ephemeral_flutter_linux_fl_method_channel_h"
+    ],
+    "58": [
+      "linux_flutter_ephemeral_flutter_linux_fl_standard_method_codec_h"
+    ],
+    "59": [
+      "linux_flutter_ephemeral_flutter_linux_fl_string_codec_h"
+    ],
+    "60": [
+      "linux_flutter_ephemeral_flutter_linux_fl_value_h"
+    ],
+    "61": [
+      "linux_flutter_ephemeral_flutter_linux_fl_view_h"
+    ],
+    "62": [
+      "linux_flutter_ephemeral_flutter_linux_flutter_linux_h"
+    ],
+    "63": [
+      "windows_flutter_generated_plugin_registrant_h"
+    ],
+    "64": [
+      "windows_runner_resource_h"
+    ],
+    "65": [
+      "windows_runner_utils_h"
+    ],
+    "66": [
+      "windows_runner_win32_window_h"
+    ],
+    "67": [
+      "android_build_gradle_kts"
+    ],
+    "68": [
+      "android_settings_gradle_kts"
+    ],
+    "69": [
+      "android_app_build_gradle_kts"
+    ],
+    "70": [
+      "music_readme_attribution"
+    ],
+    "71": [
+      "launchimage_readme_ios"
+    ],
+    "72": [
+      "web_index_html"
+    ],
+    "73": [
+      "sfx_won_wav"
+    ],
+    "74": [
+      "music_background_wav"
+    ],
+    "75": [
+      "ios_launch_image"
+    ]
+  },
+  "cohesion": {
+    "0": 0.04,
+    "1": 0.05,
+    "2": 0.05,
+    "3": 0.06,
+    "4": 0.07,
+    "5": 0.06,
+    "6": 0.11,
+    "7": 0.08,
+    "8": 0.12,
+    "9": 0.12,
+    "10": 0.12,
+    "11": 0.15,
+    "12": 0.18,
+    "13": 0.22,
+    "14": 0.29,
+    "15": 0.33,
+    "16": 0.33,
+    "17": 0.33,
+    "18": 0.47,
+    "19": 0.4,
+    "20": 0.4,
+    "21": 0.5,
+    "22": 0.67,
+    "23": 0.67,
+    "24": 0.67,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0,
+    "31": 1.0,
+    "32": 1.0,
+    "33": 1.0,
+    "34": 1.0,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0
+  },
+  "gods": [
+    {
+      "id": "project_jigsaw_puzzle",
+      "label": "Real Jigsaw Puzzle",
+      "degree": 31
+    },
+    {
+      "id": "package_flutter_material_dart",
+      "label": "package:flutter/material.dart",
+      "degree": 17
+    },
+    {
+      "id": "package_provider_provider_dart",
+      "label": "package:provider/provider.dart",
+      "degree": 12
+    },
+    {
+      "id": "style_palette_dart",
+      "label": "../style/palette.dart",
+      "degree": 8
+    },
+    {
+      "id": "package_flutter_screenutil_flutter_screenutil_dart",
+      "label": "package:flutter_screenutil/flutter_screenutil.dart",
+      "degree": 7
+    },
+    {
+      "id": "package_go_router_go_router_dart",
+      "label": "package:go_router/go_router.dart",
+      "degree": 7
+    },
+    {
+      "id": "dart_math",
+      "label": "dart:math",
+      "degree": 6
+    },
+    {
+      "id": "runner_win32_window_create",
+      "label": "Create()",
+      "degree": 6
+    },
+    {
+      "id": "runner_win32_window_destroy",
+      "label": "Destroy()",
+      "degree": 6
+    },
+    {
+      "id": "runner_appdelegate_appdelegate",
+      "label": "AppDelegate",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Real Jigsaw Puzzle",
+      "target": "Puzzle Screenshot In Progress",
+      "source_files": [
+        "README.md",
+        "screenshot/real-puzzle01.webp"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "has_screenshot",
+      "why": "crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `Puzzle Screenshot In Progress` unexpectedly reaches hub `Real Jigsaw Puzzle`"
+    },
+    {
+      "source": "Real Jigsaw Puzzle",
+      "target": "Puzzle Screenshot In Progress",
+      "source_files": [
+        "README.md",
+        "screenshot/real-puzzle04.webp"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "has_screenshot",
+      "why": "crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `Puzzle Screenshot In Progress` unexpectedly reaches hub `Real Jigsaw Puzzle`"
+    },
+    {
+      "source": "Real Jigsaw Puzzle",
+      "target": "Restart Icon",
+      "source_files": [
+        "README.md",
+        "assets/images/restart.png"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "has_ui_asset",
+      "why": "crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `Restart Icon` unexpectedly reaches hub `Real Jigsaw Puzzle`"
+    },
+    {
+      "source": "Real Jigsaw Puzzle",
+      "target": "Settings Icon",
+      "source_files": [
+        "README.md",
+        "assets/images/settings.png"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "has_ui_asset",
+      "why": "crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `Settings Icon` unexpectedly reaches hub `Real Jigsaw Puzzle`"
+    },
+    {
+      "source": "Real Jigsaw Puzzle",
+      "target": "App Launcher Icon",
+      "source_files": [
+        "README.md",
+        "assets/images/ic_launcher.png"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "has_app_icon",
+      "why": "crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `App Launcher Icon` unexpectedly reaches hub `Real Jigsaw Puzzle`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `package:flutter/material.dart` connect `Community 0` to `Community 1`, `Community 2`, `Community 3`, `Community 5`, `Community 13`, `Community 16`?",
+      "why": "High betweenness centrality (0.113) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `dart:math` connect `Community 1` to `Community 8`, `Community 3`, `Community 13`, `Community 7`?",
+      "why": "High betweenness centrality (0.070) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `package:provider/provider.dart` connect `Community 0` to `Community 2`, `Community 3`, `Community 5`, `Community 7`, `Community 13`?",
+      "why": "High betweenness centrality (0.047) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Intercept NOTIFY_DEBUGGER_ABOUT_RX_PAGES and touch the pages.`, `-registerWithRegistry`, `MyApp` to the rest of the system?",
+      "why": "296 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.04 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 1` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.05 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 2` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.05 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
