@@ -36,7 +36,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
 
   static const _preCelebrationDuration = Duration(milliseconds: 500);
 
-  bool _duringCelebration = false;
+  final bool _duringCelebration = false;
   bool isLoading = true;
 
   late DateTime _startOfPlay;
@@ -99,27 +99,25 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
         body: Column(
           children: [
             Expanded(
-              child: Container(
-                child: Stack(children: [
-                  GameWidget(
-                    loadingBuilder: (context) => Center(
-                      child: CircularProgressIndicator(
-                        color: palette.textColor,
-                      ),
-                    ),
-                    game: JigsawGame(
-                        widget.level, settingsController.soundsOn.value, () {
-                      playerWon();
-                    }),
-                    backgroundBuilder: (context) => Container(
-                      color: palette.backgroundMain,
+              child: Stack(children: [
+                GameWidget(
+                  loadingBuilder: (context) => Center(
+                    child: CircularProgressIndicator(
+                      color: palette.textColor,
                     ),
                   ),
-                  // AnimatedHideWidget(
-                  //   color: palette.backgroundMain,
-                  // )
-                ]),
-              ),
+                  game: JigsawGame(
+                      widget.level, settingsController.soundsOn.value, () {
+                    playerWon();
+                  }),
+                  backgroundBuilder: (context) => Container(
+                    color: palette.backgroundMain,
+                  ),
+                ),
+                // AnimatedHideWidget(
+                //   color: palette.backgroundMain,
+                // )
+              ]),
             ),
             SizedBox(
               height: 8.h,
@@ -168,7 +166,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
 
   void showImage() async {
     File file = await DefaultCacheManager().getSingleFile(widget.level.image);
-    AwesomeDialog(
+    await AwesomeDialog(
       width: 400.h,
       context: context,
       animType: AnimType.scale,
@@ -204,14 +202,14 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
       animType: AnimType.scale,
       headerAnimationLoop: false,
       dialogType: DialogType.noHeader,
-      body: Container(
+      body: SizedBox(
         width: 400.h,
         height: 0.3.sh,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
+            SizedBox(
                 height: 0.2.sh,
                 child: Center(child: Lottie.asset('assets/lottie/win.json'))),
             Text(

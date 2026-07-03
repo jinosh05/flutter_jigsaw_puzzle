@@ -2,13 +2,13 @@
 ///app的http异常与提示信息
 class HttpException {
   String? message;
-  HttpExceptionType _type;
+  final HttpExceptionType _type;
   static String code401 = "401";
   static String code403 = "403";
 
   HttpException(this._type, {this.message = ""});
 
-  get type => _type;
+  HttpExceptionType get type => _type;
 
   @override
   String toString() {

@@ -9,6 +9,7 @@ import 'package:flame/extensions.dart';
 import 'package:flame/game.dart';
 import 'package:flame/image_composition.dart';
 import 'package:flame_audio/flame_audio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_jigsaw_puzzle/src/level_selection/jigsaw_info.dart';
 
@@ -37,7 +38,7 @@ class JigsawGame extends FlameGame with HasCollisionDetection {
     Image image = await getFileImage(file);
     _scale = ImageUtils.calculateScale(size.x / 3.0 * 2.0, size.y / 3.0 * 2.0,
         image.width.toDouble(), image.height.toDouble());
-    print("scale:$_scale");
+    debugPrint("scale:$_scale");
     gridSize = jigsawInfo.gridSize;
     final double widthPerBlock = image.width / gridSize;
     final double heightPerBlock = image.height / gridSize;
@@ -69,15 +70,15 @@ class JigsawGame extends FlameGame with HasCollisionDetection {
     }
   }
 
-  getResult(int num, bool added) async {
+  Future<void> getResult(int num, bool added) async {
     if (num == gridSize * gridSize) {
-      print("getResult win:$num");
+      debugPrint("getResult win:$num");
       win();
       if (isMusicOn) {
         FlameAudio.play('won.wav');
       }
     } else {
-      print("getResult isMusicOn:$isMusicOn");
+      debugPrint("getResult isMusicOn:$isMusicOn");
       if (added && isMusicOn) {
         FlameAudio.play('click.wav');
       }
@@ -87,7 +88,7 @@ class JigsawGame extends FlameGame with HasCollisionDetection {
   Future<Image> getFileImage(File filePath) async {
     var minHeight = (size.y / 3.0 * 2.0).toInt();
     var minWidth = (size.x / 3.0 * 2.0).toInt();
-    print("minHeight:$minHeight minWidth:$minWidth");
+    debugPrint("minHeight:$minHeight minWidth:$minWidth");
     // var list = await FlutterImageCompress.compressWithFile(
     //   filePath,
     //   minHeight: minHeight,
@@ -98,7 +99,7 @@ class JigsawGame extends FlameGame with HasCollisionDetection {
 
     final Completer<ui.Image> completer = Completer();
     ui.decodeImageFromList(filePath.readAsBytesSync(), (ui.Image img) {
-      print("image width:${img.width} image height:${img.height}:");
+      debugPrint("image width:${img.width} image height:${img.height}:");
       return completer.complete(img);
     });
     return completer.future;
@@ -107,7 +108,7 @@ class JigsawGame extends FlameGame with HasCollisionDetection {
   @override
   void onGameResize(Vector2 size) {
     super.onGameResize(size);
-    print("onGameResize:$size");
+    debugPrint("onGameResize:$size");
   }
 
   PieceComponent getPiece(
@@ -165,7 +166,7 @@ class JigsawGame extends FlameGame with HasCollisionDetection {
     int width = (widthPerBlock.toInt() + pieceSize * _scale * 2).toInt();
     int height = (heightPerBlock.toInt() + pieceSize * _scale * 2).toInt();
     pieceY = pieceY + height;
-    if (positions.length == 0) {
+    if (positions.isEmpty) {
       pieceY = 0;
     }
     if (pieceY + height > size.y) {
@@ -186,7 +187,7 @@ class JigsawGame extends FlameGame with HasCollisionDetection {
     int width = (widthPerBlock.toInt() + pieceSize * _scale * 2).toInt();
     int height = (heightPerBlock.toInt() + pieceSize * _scale * 2).toInt();
     pieceX = pieceX - width;
-    if (positions.length == 0) {
+    if (positions.isEmpty) {
       pieceX = size.x - width;
       pieceY = size.y - height;
     }

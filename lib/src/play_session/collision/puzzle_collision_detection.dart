@@ -1,7 +1,7 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/geometry.dart';
-import 'package:flutter_jigsaw_puzzle/src/play_session/collision/PuzzleHitbox.dart';
+import 'package:flutter_jigsaw_puzzle/src/play_session/collision/puzzle_hit_box.dart';
 import 'package:flutter_jigsaw_puzzle/src/play_session/shape_type.dart';
 
 /// The default implementation of [CollisionDetection].

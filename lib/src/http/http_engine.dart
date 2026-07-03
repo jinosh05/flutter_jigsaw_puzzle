@@ -6,7 +6,7 @@ import 'http_exception.dart';
 typedef HttpProgressBack = void Function(double progress);
 
 abstract class HttpEngine {
-  Map<String, CancelToken> _cancelToken = {};
+  final Map<String, CancelToken> _cancelToken = {};
 
   dynamic getEngine();
 
@@ -22,7 +22,7 @@ abstract class HttpEngine {
     HttpProgressBack progressBack,
   );
 
-  getFileName(String filePath) {
+  String getFileName(String filePath) {
     return filePath.substring(filePath.lastIndexOf("/") + 1, filePath.length);
   }
 
@@ -38,7 +38,7 @@ abstract class HttpEngine {
 
   static Future<bool> isNetworkConnect() async {
     var connectivityResult = await (Connectivity().checkConnectivity());
-    return connectivityResult != ConnectivityResult.none;
+    return !connectivityResult.contains(ConnectivityResult.none);
   }
 
   void cancelRequest(String url) {
@@ -47,7 +47,7 @@ abstract class HttpEngine {
     }
   }
 
-  void catchError(error) {
+  void catchError(dynamic error) {
     if (error is DioException) {
       switch (error.type) {
         case DioExceptionType.connectionTimeout:

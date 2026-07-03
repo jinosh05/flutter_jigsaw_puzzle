@@ -27,10 +27,11 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
   final PagingController<int, JigsawInfo> _pagingController =
       PagingController(firstPageKey: 1);
 
+  @override
   initState() {
     super.initState();
     _pagingController.addPageRequestListener((pageKey) async {
-      print("addPageRequestListener:$pageKey");
+      debugPrint("addPageRequestListener:$pageKey");
       _fetchPage(pageKey);
     });
   }
@@ -53,7 +54,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
       }).onError((error, stackTrace) {
         _pagingController.error = error;
         CherryToast.error(title: Text(error.toString())).show(context);
-        print(error);
+        debugPrint(error.toString());
       });
     } catch (error) {
       _pagingController.error = error;
@@ -88,7 +89,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
         ],
       ),
       body: Center(
-        child: Container(
+        child: SizedBox(
           width: 0.9.sw,
           child: CustomScrollView(
             slivers: [
@@ -134,7 +135,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
   }
 
   void _showDetailsDialog(BuildContext context, JigsawInfo item) {
-    var _gridSizeValue = 4;
+    var gridSizeValue = 4;
     AwesomeDialog(
       dialogBackgroundColor: Palette().backgroundMain,
       btnOkColor: Palette().btnOkColor,
@@ -158,24 +159,24 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    buildSelectGridSize(2, _gridSizeValue, (v) {
+                    buildSelectGridSize(2, gridSizeValue, (v) {
                       setState(() {
-                        _gridSizeValue = v;
+                        gridSizeValue = v;
                       });
                     }),
-                    buildSelectGridSize(4, _gridSizeValue, (v) {
+                    buildSelectGridSize(4, gridSizeValue, (v) {
                       setState(() {
-                        _gridSizeValue = v;
+                        gridSizeValue = v;
                       });
                     }),
-                    buildSelectGridSize(5, _gridSizeValue, (v) {
+                    buildSelectGridSize(5, gridSizeValue, (v) {
                       setState(() {
-                        _gridSizeValue = v;
+                        gridSizeValue = v;
                       });
                     }),
-                    buildSelectGridSize(6, _gridSizeValue, (v) {
+                    buildSelectGridSize(6, gridSizeValue, (v) {
                       setState(() {
-                        _gridSizeValue = v;
+                        gridSizeValue = v;
                       });
                     }),
                   ],
@@ -186,24 +187,24 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    buildSelectGridSize(7, _gridSizeValue, (v) {
+                    buildSelectGridSize(7, gridSizeValue, (v) {
                       setState(() {
-                        _gridSizeValue = v;
+                        gridSizeValue = v;
                       });
                     }),
-                    buildSelectGridSize(8, _gridSizeValue, (v) {
+                    buildSelectGridSize(8, gridSizeValue, (v) {
                       setState(() {
-                        _gridSizeValue = v;
+                        gridSizeValue = v;
                       });
                     }),
-                    buildSelectGridSize(9, _gridSizeValue, (v) {
+                    buildSelectGridSize(9, gridSizeValue, (v) {
                       setState(() {
-                        _gridSizeValue = v;
+                        gridSizeValue = v;
                       });
                     }),
-                    buildSelectGridSize(10, _gridSizeValue, (v) {
+                    buildSelectGridSize(10, gridSizeValue, (v) {
                       setState(() {
-                        _gridSizeValue = v;
+                        gridSizeValue = v;
                       });
                     })
                   ],
@@ -214,21 +215,22 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
         },
       ),
       btnOk: Center(
-        child: Container(
+        child: SizedBox(
           width: 100.w,
           child: ElevatedButton(
             onPressed: () {
-              item.gridSize = _gridSizeValue;
+              item.gridSize = gridSizeValue;
               GoRouter.of(context).go('/play/loading/', extra: item);
             },
             child: Text("Start"),
           ),
         ),
       ),
-    )..show();
+    ).show();
   }
 
-  Widget buildSelectGridSize(int num, int _gridSizeValue, f(v)) {
+  Widget buildSelectGridSize(
+      int num, int gridSizeValue, Function(dynamic v) f) {
     final palette = context.watch<Palette>();
     return GestureDetector(
       onTap: () {
@@ -240,7 +242,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
         margin: EdgeInsets.only(left: 8.w, right: 8.w),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: _gridSizeValue == num
+          color: gridSizeValue == num
               ? palette.tabSelectColor
               : palette.tabUnSelectColor,
         ),

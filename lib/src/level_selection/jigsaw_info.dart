@@ -3,6 +3,7 @@
 /// pictureUrl : ""
 /// title : ""
 /// type : ""
+library;
 
 class JigsawInfo {
   late int id;

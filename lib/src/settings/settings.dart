@@ -47,7 +47,7 @@ class SettingsController {
 
   // void toggleMusicOn() {
   //   musicOn.value = !musicOn.value;
-  //   print("SettingsController toggleMusicOn:${musicOn.value}");
+  //       debugPrint("SettingsController toggleMusicOn:${musicOn.value}");
   //   _persistence.saveMusicOn(musicOn.value);
   // }
 

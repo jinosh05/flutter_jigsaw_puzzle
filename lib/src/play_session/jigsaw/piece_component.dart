@@ -5,7 +5,7 @@ import 'package:flame/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_jigsaw_puzzle/src/play_session/jigsaw/jigsaw_game.dart';
 
-import '../collision/PuzzleHitbox.dart';
+import '../collision/puzzle_hit_box.dart';
 import '../shape_type.dart';
 import 'piece_group.dart';
 
@@ -26,10 +26,10 @@ class PieceComponent extends PositionComponent
 
   late PieceGroup group;
 
-  PuzzleHitbox? topHitbox = null;
-  PuzzleHitbox? rightHitbox = null;
-  PuzzleHitbox? bottomHitbox = null;
-  PuzzleHitbox? leftHitbox = null;
+  PuzzleHitbox? topHitbox;
+  PuzzleHitbox? rightHitbox;
+  PuzzleHitbox? bottomHitbox;
+  PuzzleHitbox? leftHitbox;
 
   List<PieceComponent> hitOthers = [];
 
@@ -40,7 +40,7 @@ class PieceComponent extends PositionComponent
     this.sprite = sprite;
     add(sprite);
     _path = Path();
-    this._pieceSize = pieceSize;
+    _pieceSize = pieceSize;
     // print("PieceComponent:" + _pieceSize.toString());
     topLeft = Offset(0, 0);
     topRight = Offset(size.x, 0);
@@ -101,7 +101,7 @@ class PieceComponent extends PositionComponent
 
   //set priority to child
   //是调用者所有孩子的setPriority方法
-  setPriority(int priority) {
+  void setPriority(int priority) {
     // this.priority = priority;
     for (PieceComponent child in group.children) {
       child.priority = priority;
@@ -109,7 +109,7 @@ class PieceComponent extends PositionComponent
   }
 
   //set position to child
-  setPosition(Vector2 p) {
+  void setPosition(Vector2 p) {
     // this.position = p;
     // this.position.add(p);
     for (PieceComponent child in group.children) {
@@ -124,7 +124,7 @@ class PieceComponent extends PositionComponent
     if (priority != 2) return;
 
     if (!hitOthers.contains(o)) {
-      print("onCollision: add:" + this.toString() + " other:" + o.toString());
+      debugPrint("onCollision: add:$this other:$o");
       hitOthers.add(o);
     }
   }
@@ -134,48 +134,48 @@ class PieceComponent extends PositionComponent
     if (xSort == o.xSort) {
       //top
       if (ySort - 1 == o.ySort && position.y > o.position.y) {
-        this.topHitbox?.inactive();
+        topHitbox?.inactive();
         o.bottomHitbox?.inactive();
         var toPosition =
             o.position + o.bottomLeft.toVector2() - topLeft.toVector2();
-        setPosition(toPosition - this.position);
+        setPosition(toPosition - position);
         // this.group.add(o);
-        print("onCollision top " + this.child());
+        debugPrint("onCollision top ${child()}");
         return true;
       }
       //bottom
       if (ySort + 1 == o.ySort && position.y < o.position.y) {
-        this.bottomHitbox?.inactive();
+        bottomHitbox?.inactive();
         o.topHitbox?.inactive();
         var toPosition =
             o.position + o.topLeft.toVector2() - bottomLeft.toVector2();
-        setPosition(toPosition - this.position);
+        setPosition(toPosition - position);
         // this.group.add(o);
-        print("onCollision bottom " + this.child());
+        debugPrint("onCollision bottom ${child()}");
         return true;
       }
     }
     if (ySort == o.ySort) {
       //left
       if (xSort - 1 == o.xSort && position.x > o.position.x) {
-        this.leftHitbox?.inactive();
+        leftHitbox?.inactive();
         o.rightHitbox?.inactive();
         var toPosition =
             o.position + o.topRight.toVector2() - topLeft.toVector2();
-        setPosition(toPosition - this.position);
+        setPosition(toPosition - position);
         // this.group.add(o);
-        print("onCollision left " + this.child());
+        debugPrint("onCollision left ${child()}");
         return true;
       }
       //right
       if (xSort + 1 == o.xSort && position.x < o.position.x) {
-        this.rightHitbox?.inactive();
+        rightHitbox?.inactive();
         o.leftHitbox?.inactive();
         var toPosition =
             o.position + o.topLeft.toVector2() - topRight.toVector2();
-        setPosition(toPosition - this.position);
+        setPosition(toPosition - position);
         // this.group.add(o);
-        print("onCollision right " + this.child());
+        debugPrint("onCollision right ${child()}");
         return true;
       }
     }
@@ -185,7 +185,7 @@ class PieceComponent extends PositionComponent
   @override
   void onCollisionEnd(PositionComponent other) {
     super.onCollisionEnd(other);
-    print("onCollisionEnd");
+    debugPrint("onCollisionEnd");
     hitOthers.clear();
   }
 
@@ -198,17 +198,17 @@ class PieceComponent extends PositionComponent
       willAdd.addAll(o.dragEnd());
     }
     for (PieceComponent o in willAdd) {
-      this.group.add(o);
+      group.add(o);
     }
-    print('onDragEnd:${willAdd.length}');
+    debugPrint('onDragEnd:${willAdd.length}');
     final root = findParent() as JigsawGame;
-    root.getResult(this.group.children.length, willAdd.length > 0);
-    print("root:${root.toString()}");
+    root.getResult(group.children.length, willAdd.isNotEmpty);
+    debugPrint("root:${root.toString()}");
   }
 
   List<PieceComponent> dragEnd() {
     List<PieceComponent> willAdd = [];
-    if (hitOthers.length > 0) {
+    if (hitOthers.isNotEmpty) {
       for (PieceComponent o in hitOthers) {
         if (_linkOther(o)) {
           willAdd.add(o);

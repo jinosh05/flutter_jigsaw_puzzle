@@ -7,9 +7,7 @@ class DioClient {
   late HttpEngine _engine;
 
   static DioClient getInstance() {
-    if (_instance == null) {
-      _instance = DioClient._();
-    }
+    _instance ??= DioClient._();
     return _instance!;
   }
 

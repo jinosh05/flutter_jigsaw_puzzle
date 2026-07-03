@@ -20,7 +20,7 @@ class AboutScreen extends StatefulWidget {
 }
 
 class _AboutScreenState extends State<AboutScreen> {
-  var _gap = SizedBox(height: 20.h);
+  final _gap = SizedBox(height: 20.h);
   PackageInfo _packageInfo = PackageInfo(
     appName: 'Unknown',
     packageName: 'Unknown',
@@ -70,7 +70,7 @@ class _AboutScreenState extends State<AboutScreen> {
           height: 150.w,
         ),
         _gap,
-        Center(child: Text("${_packageInfo.appName}")),
+        Center(child: Text(_packageInfo.appName)),
         _gap,
         Center(child: Text("Ver:${_packageInfo.version}"))
       ]),

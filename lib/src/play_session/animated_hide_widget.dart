@@ -6,13 +6,13 @@ import '../style/palette.dart';
 
 class AnimatedHideWidget extends StatefulWidget {
   final Color color;
-  AnimatedHideWidget({required this.color});
+  const AnimatedHideWidget({super.key, required this.color});
 
   @override
-  _AnimatedHideWidgetState createState() => _AnimatedHideWidgetState();
+  AnimatedHideWidgetState createState() => AnimatedHideWidgetState();
 }
 
-class _AnimatedHideWidgetState extends State<AnimatedHideWidget>
+class AnimatedHideWidgetState extends State<AnimatedHideWidget>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _animation;

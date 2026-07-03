@@ -41,6 +41,8 @@ dependencies:
 #  mixpanel_flutter: ^2.0.0
 
 # audioplayers: any
+  audioplayers: any
+  file: any
 file: any
 
 dev_dependencies:

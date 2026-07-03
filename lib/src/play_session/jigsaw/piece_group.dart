@@ -7,7 +7,7 @@ class PieceGroup{
   PieceGroup(PieceComponent child){
     children.add(child);
   }
-  add(PieceComponent other){
+  void add(PieceComponent other){
     for (PieceComponent o in other.group.children) {
       if(!children.contains(o)){
         children.add(o);

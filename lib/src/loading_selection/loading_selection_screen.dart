@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+
 import '../level_selection/jigsaw_info.dart';
 import '../level_selection/piece_image.dart';
 
@@ -28,7 +28,7 @@ class _LoadingSelectionScreenState extends State<LoadingSelectionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: 1.sw,
         height: 1.sh,
         child: Stack(children: [
@@ -41,12 +41,12 @@ class _LoadingSelectionScreenState extends State<LoadingSelectionScreen> {
               return Container();
             },
             progress: () {
-              print("complete: $p");
+              debugPrint("complete: $p");
               int now = DateTime.now().microsecondsSinceEpoch;
-              print('now $now');
-              print('date $date');
-              print('diff ${now - date}');
-              print("complete: 22");
+              debugPrint('now $now');
+              debugPrint('date $date');
+              debugPrint('diff ${now - date}');
+              debugPrint("complete: 22");
               WidgetsBinding.instance.addPostFrameCallback((_) {
                 Future.delayed(Duration(milliseconds: 1500), () async {
                   GoRouter.of(context)
@@ -68,7 +68,7 @@ class _LoadingSelectionScreenState extends State<LoadingSelectionScreen> {
               margin: EdgeInsets.only(bottom: 0.1.sh),
               width: 0.9.sw,
               child: Stack(alignment: Alignment.center, children: [
-                Container(
+                SizedBox(
                   height: 30.h,
                   child: LinearProgressIndicator(
                     backgroundColor: Colors.grey[200],

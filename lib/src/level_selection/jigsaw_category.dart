@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class JigsawCategory {
   late String categoryEnname;
   late int id;
@@ -10,7 +12,7 @@ class JigsawCategory {
   );
 
   JigsawCategory.fromJson(dynamic json) {
-    print("json:${json}");
+    debugPrint("json:$json");
     categoryEnname = json['category_enname'];
     id = json['id'];
     categoryName = json['category_cnname'];

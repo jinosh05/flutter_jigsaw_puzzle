@@ -8,9 +8,9 @@ import '../style/palette.dart';
 class JigsawGridItem extends StatelessWidget {
   const JigsawGridItem({
     required this.info,
-    Key? key,
+    super.key,
     this.onTap,
-  }) : super(key: key);
+  });
   final JigsawInfo info;
   final GestureTapCallback? onTap;
 
@@ -29,6 +29,8 @@ class JigsawGridItem extends StatelessWidget {
           children: [
             PieceImage(pictureUrl: info.smallimage),
             Positioned(
+              bottom: 2,
+              right: 6,
               child: Container(
                   constraints: BoxConstraints(maxWidth: 150),
                   padding: const EdgeInsets.all(2.0),
@@ -38,8 +40,6 @@ class JigsawGridItem extends StatelessWidget {
                   ),
                   child: Text('@${info.photographer}',overflow: TextOverflow.ellipsis,
                     maxLines: 1,)),
-              bottom: 2,
-              right: 6,
             )
           ],
         ),

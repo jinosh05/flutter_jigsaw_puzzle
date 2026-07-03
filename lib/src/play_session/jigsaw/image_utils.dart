@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flame/components.dart';
+import 'package:flutter/foundation.dart';
 
 class ImageUtils {
   static double calculateScale(double targetSizeWidth, double targetSizeHeight,
@@ -19,27 +20,27 @@ class ImageUtils {
 
   static Vector2 fitCenter(
       double width, double height, double targetWidth, double targetHeight) {
-    print("image.width:${width} image.height:${height}");
+    debugPrint("image.width:$width image.height:$height");
 
-    double original_aspect_ratio = 1.0;
-    double target_aspect_ratio = 1.0;
-    double new_width = 0.0;
-    double new_height = 0.0;
+    double originalAspectRatio = 1.0;
+    double targetAspectRatio = 1.0;
+    double newWidth = 0.0;
+    double newHeight = 0.0;
 
     // 计算原始图像和目标尺寸的宽高比
-    original_aspect_ratio = width / height;
-    target_aspect_ratio = targetWidth / targetHeight;
+    originalAspectRatio = width / height;
+    targetAspectRatio = targetWidth / targetHeight;
 
     // 如果原始宽高比大于目标宽高比，则需要缩放宽度
-    if (original_aspect_ratio > target_aspect_ratio) {
-      new_width = targetWidth;
-      new_height = targetWidth / original_aspect_ratio;
+    if (originalAspectRatio > targetAspectRatio) {
+      newWidth = targetWidth;
+      newHeight = targetWidth / originalAspectRatio;
     } else {
       //否则，需要缩放高度
-      new_height = targetHeight;
-      new_width = targetHeight * original_aspect_ratio;
+      newHeight = targetHeight;
+      newWidth = targetHeight * originalAspectRatio;
     }
-    print("image.new_width:${new_width} image.new_height:${new_height}");
-    return Vector2(new_width, new_height);
+    debugPrint("image.new_width:$newWidth image.new_height:$newHeight");
+    return Vector2(newWidth, newHeight);
   }
 }
