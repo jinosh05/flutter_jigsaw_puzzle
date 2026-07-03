@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 ///app的http异常与提示信息
 class HttpException {

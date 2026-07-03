@@ -69,10 +69,9 @@ abstract class HttpEngine {
           throw HttpException(HttpExceptionType.cancel, message: error.message);
         case DioExceptionType.unknown:
           throw HttpException(HttpExceptionType.other, message: error.message);
-          break;
         case DioExceptionType.transformTimeout:
-          // TODO: Handle this case.
-          throw UnimplementedError();
+          throw HttpException(HttpExceptionType.timeout,
+              message: error.message);
       }
     } else {
       throw HttpException(HttpExceptionType.responseError,

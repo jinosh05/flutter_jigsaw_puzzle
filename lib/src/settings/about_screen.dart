@@ -58,9 +58,7 @@ class _AboutScreenState extends State<AboutScreen> {
         backgroundColor: palette.backgroundMain,
         title: Text(
           'Setting',
-          style: TextStyle(
-              fontSize: 40.sp,
-              color: palette.textColor),
+          style: TextStyle(fontSize: 40.sp, color: palette.textColor),
         ),
       ),
       backgroundColor: palette.backgroundMain,
@@ -134,7 +132,7 @@ class _SettingsLine extends StatelessWidget {
 
   final VoidCallback? onSelected;
 
-  const _SettingsLine(this.title, this.icon, {this.onSelected});
+  const _SettingsLine(this.title, this.icon) : onSelected = null;
 
   @override
   Widget build(BuildContext context) {

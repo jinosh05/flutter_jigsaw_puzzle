@@ -6,13 +6,13 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_jigsaw_puzzle/src/loading_selection/loading_selection_screen.dart';
 import 'package:flutter_jigsaw_puzzle/src/settings/about_screen.dart';
 import 'package:flutter_jigsaw_puzzle/src/utils/sp_util.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:logging/logging.dart';
 import 'package:provider/provider.dart';
@@ -105,7 +105,6 @@ class MyApp extends StatelessWidget {
                       );
                     },
                   ),
-
                 ]),
             GoRoute(
                 path: 'settings',
@@ -131,14 +130,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(1067,750),
+      designSize: const Size(1067, 750),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
         return AppLifecycleObserver(
           child: MultiProvider(
             providers: [
-
               Provider<SettingsController>(
                 lazy: false,
                 create: (context) => SettingsController(
@@ -173,7 +171,7 @@ class MyApp extends StatelessWidget {
                 theme: ThemeData.from(
                   colorScheme: ColorScheme.fromSeed(
                     seedColor: palette.btnOkColor,
-                    background: palette.backgroundMain,
+                    surface: palette.backgroundMain,
                   ),
                   textTheme: TextTheme(
                     bodyMedium: TextStyle(

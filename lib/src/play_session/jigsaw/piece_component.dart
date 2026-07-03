@@ -93,7 +93,7 @@ class PieceComponent extends PositionComponent
 
   @override
   void onDragUpdate(DragUpdateEvent event) {
-    Vector2 p = event.delta;
+    Vector2 p = event.localDelta;
     setPosition(p);
     event.continuePropagation = false;
     setPriority(2);
@@ -202,7 +202,7 @@ class PieceComponent extends PositionComponent
     }
     print('onDragEnd:${willAdd.length}');
     final root = findParent() as JigsawGame;
-    root.getResult(this.group.children.length,willAdd.length>0);
+    root.getResult(this.group.children.length, willAdd.length > 0);
     print("root:${root.toString()}");
   }
 
