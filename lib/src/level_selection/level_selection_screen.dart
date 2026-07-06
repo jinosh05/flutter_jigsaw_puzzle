@@ -164,6 +164,11 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
                         gridSizeValue = v;
                       });
                     }),
+                    buildSelectGridSize(3, gridSizeValue, (v) {
+                      setState(() {
+                        gridSizeValue = v;
+                      });
+                    }),
                     buildSelectGridSize(4, gridSizeValue, (v) {
                       setState(() {
                         gridSizeValue = v;

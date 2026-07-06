@@ -1,4 +1,3 @@
-
 ///app的http异常与提示信息
 class HttpException {
   String? message;

@@ -96,36 +96,25 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
             )
           ],
         ),
-        body: Column(
-          children: [
-            Expanded(
-              child: Stack(children: [
-                GameWidget(
-                  loadingBuilder: (context) => Center(
-                    child: CircularProgressIndicator(
-                      color: palette.textColor,
-                    ),
-                  ),
-                  game: JigsawGame(
-                      widget.level, settingsController.soundsOn.value, () {
-                    playerWon();
-                  }),
-                  backgroundBuilder: (context) => Container(
-                    color: palette.backgroundMain,
-                  ),
-                ),
-                // AnimatedHideWidget(
-                //   color: palette.backgroundMain,
-                // )
-              ]),
+        body: Padding(
+          padding: EdgeInsets.only(bottom: 16.h),
+          child: GameWidget(
+            /// Replace with Shimmers
+            loadingBuilder: (context) => Center(
+              child: CircularProgressIndicator(
+                color: palette.textColor,
+              ),
             ),
-            SizedBox(
-              height: 8.h,
+            game:
+                JigsawGame(widget.level, settingsController.soundsOn.value, () {
+              playerWon();
+            }),
+
+            /// Background color has to be replaced with Image
+            backgroundBuilder: (context) => Container(
+              color: palette.backgroundMain,
             ),
-            SizedBox(
-              height: 8.h,
-            )
-          ],
+          ),
         ),
       ),
     );
