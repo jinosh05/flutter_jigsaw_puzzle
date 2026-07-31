@@ -8,6 +8,7 @@ import 'dart:ui' as ui;
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flame/game.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_jigsaw_puzzle/src/level_selection/jigsaw_info.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -43,6 +44,8 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
   late DateTime _startOfPlay;
   final TransformationController _transformController =
       TransformationController();
+  final GlobalKey _boardViewportKey = GlobalKey();
+  final ScrollController _piecesScrollController = ScrollController();
 
   @override
   void initState() {
@@ -63,6 +66,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
   @override
   void dispose() {
     _transformController.dispose();
+    _piecesScrollController.dispose();
     super.dispose();
   }
 
@@ -106,7 +110,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                 Expanded(
                   child: LayoutBuilder(
                     builder: (context, constraints) {
-                      const padding = 12.0;
+                      const padding = 6.0;
                       final frameSize = max(
                         0.0,
                         min(
@@ -137,6 +141,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                             ],
                           ),
                           child: ClipRRect(
+                            key: _boardViewportKey,
                             borderRadius: BorderRadius.circular(14.r),
                             child: Stack(
                               fit: StackFit.expand,
@@ -146,8 +151,8 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                                       _transformController,
                                   boundaryMargin: EdgeInsets.zero,
                                   clipBehavior: Clip.hardEdge,
-                                  minScale: 0.5,
-                                  maxScale: 2.5,
+                                  minScale: 1.0,
+                                  maxScale: 3.0,
                                   child: SizedBox(
                                     width: boardSize,
                                     height: boardSize,
@@ -335,11 +340,17 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
   void _zoomBy(double factor) {
     final matrix = _transformController.value.clone();
     final currentScale = matrix.getMaxScaleOnAxis();
-    final newScale = (currentScale * factor).clamp(0.5, 2.5);
+    final newScale = (currentScale * factor).clamp(1.0, 3.0).toDouble();
     if (newScale == currentScale) return;
 
     final scaleChange = newScale / currentScale;
+    final viewportSize = _boardViewportKey.currentContext?.size;
+    if (viewportSize == null) return;
+
+    final center = Offset(viewportSize.width / 2, viewportSize.height / 2);
+    matrix.translate(center.dx, center.dy);
     matrix.scale(scaleChange);
+    matrix.translate(-center.dx, -center.dy);
     _transformController.value = matrix;
   }
 
@@ -348,7 +359,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
       valueListenable: _game.unplacedPieces,
       builder: (context, pieces, child) {
         return Container(
-          margin: EdgeInsets.fromLTRB(8.w, 0, 8.w, 12.h),
+          margin: EdgeInsets.fromLTRB(8.w, 0, 8.w, 8.h),
           decoration: BoxDecoration(
             color: palette.tabUnSelectColor.withOpacity(0.35),
             borderRadius: BorderRadius.circular(16.r),
@@ -358,7 +369,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
                 child: Row(
                   children: [
                     Text(
@@ -393,35 +404,48 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                 )
               else
                 SizedBox(
-                  height: 100.h,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    padding: EdgeInsets.fromLTRB(12.w, 0, 12.w, 12.h),
-                    itemCount: pieces.length,
-                    itemBuilder: (context, index) {
-                      final piece = pieces[index];
-                      return GestureDetector(
-                        onTap: () => _game.placePiece(piece),
-                        child: Container(
-                          width: 90.h,
-                          margin: EdgeInsets.only(right: 8.w),
-                          decoration: BoxDecoration(
-                            color: palette.backgroundMain.withOpacity(0.6),
-                            borderRadius: BorderRadius.circular(12.r),
-                            border: Border.all(
-                              color: palette.textColor.withOpacity(0.2),
+                  height: 86.h,
+                  child: ScrollConfiguration(
+                    behavior: ScrollConfiguration.of(context).copyWith(
+                      dragDevices: {
+                        PointerDeviceKind.touch,
+                        PointerDeviceKind.mouse,
+                      },
+                    ),
+                    child: Scrollbar(
+                      controller: _piecesScrollController,
+                      thumbVisibility: true,
+                      child: ListView.builder(
+                        controller: _piecesScrollController,
+                        scrollDirection: Axis.horizontal,
+                        padding: EdgeInsets.fromLTRB(12.w, 0, 12.w, 8.h),
+                        itemCount: pieces.length,
+                        itemBuilder: (context, index) {
+                          final piece = pieces[index];
+                          return GestureDetector(
+                            onTap: () => _game.placePiece(piece),
+                            child: Container(
+                              width: 78.h,
+                              margin: EdgeInsets.only(right: 8.w),
+                              decoration: BoxDecoration(
+                                color: palette.backgroundMain.withOpacity(0.6),
+                                borderRadius: BorderRadius.circular(12.r),
+                                border: Border.all(
+                                  color: palette.textColor.withOpacity(0.2),
+                                ),
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12.r),
+                                child: Transform.scale(
+                                  scale: 0.8,
+                                  child: _PiecePreview(piece: piece),
+                                ),
+                              ),
                             ),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(12.r),
-                            child: Transform.scale(
-                              scale: 0.8,
-                              child: _PiecePreview(piece: piece),
-                            ),
-                          ),
-                        ),
-                      );
-                    },
+                          );
+                        },
+                      ),
+                    ),
                   ),
                 ),
             ],

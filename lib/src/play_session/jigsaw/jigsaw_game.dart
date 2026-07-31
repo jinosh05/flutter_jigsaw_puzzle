@@ -51,8 +51,8 @@ class JigsawGame extends FlameGame with HasCollisionDetection {
 
     // Scale the assembled puzzle to fit inside the square board area.
     _scale = ImageUtils.calculateScale(
-      size.x * 0.92,
-      size.y * 0.92,
+      size.x * 0.78,
+      size.y * 0.78,
       _imageWidth,
       _imageHeight,
     );
@@ -95,12 +95,76 @@ class JigsawGame extends FlameGame with HasCollisionDetection {
   bool showHint() {
     if (unplacedPieces.value.isEmpty) return false;
 
-    final piece = unplacedPieces.value.first;
-    piece.position = clampPosition(piece, targetPositionFor(piece));
+    PieceComponent? piece;
+    Vector2? hintPosition;
+    var bestNeighborCount = -1;
+
+    for (final candidate in unplacedPieces.value) {
+      final neighborCount = _placedNeighborCount(candidate);
+      if (neighborCount > bestNeighborCount) {
+        final candidatePosition = _positionFromPlacedNeighbor(candidate);
+        if (candidatePosition != null) {
+          piece = candidate;
+          hintPosition = candidatePosition;
+          bestNeighborCount = neighborCount;
+        }
+      }
+    }
+
+    piece ??= unplacedPieces.value.first;
+    hintPosition ??= targetPositionFor(piece);
+    piece.position = clampPosition(piece, hintPosition);
     add(piece);
     unplacedPieces.value = List<PieceComponent>.from(unplacedPieces.value)
       ..remove(piece);
     return true;
+  }
+
+  int _placedNeighborCount(PieceComponent piece) {
+    return allPieces.where((other) {
+      return children.contains(other) && _areNeighbors(piece, other);
+    }).length;
+  }
+
+  bool _areNeighbors(PieceComponent first, PieceComponent second) {
+    return (first.xSort == second.xSort &&
+            (first.ySort - second.ySort).abs() == 1) ||
+        (first.ySort == second.ySort &&
+            (first.xSort - second.xSort).abs() == 1);
+  }
+
+  Vector2? _positionFromPlacedNeighbor(PieceComponent piece) {
+    for (final neighbor in allPieces) {
+      if (!children.contains(neighbor) || !_areNeighbors(piece, neighbor)) {
+        continue;
+      }
+
+      if (piece.xSort == neighbor.xSort &&
+          piece.ySort == neighbor.ySort + 1) {
+        return neighbor.position +
+            neighbor.bottomLeft.toVector2() -
+            piece.topLeft.toVector2();
+      }
+      if (piece.xSort == neighbor.xSort &&
+          piece.ySort == neighbor.ySort - 1) {
+        return neighbor.position +
+            neighbor.topLeft.toVector2() -
+            piece.bottomLeft.toVector2();
+      }
+      if (piece.ySort == neighbor.ySort &&
+          piece.xSort == neighbor.xSort + 1) {
+        return neighbor.position +
+            neighbor.topRight.toVector2() -
+            piece.topLeft.toVector2();
+      }
+      if (piece.ySort == neighbor.ySort &&
+          piece.xSort == neighbor.xSort - 1) {
+        return neighbor.position +
+            neighbor.topLeft.toVector2() -
+            piece.topRight.toVector2();
+      }
+    }
+    return null;
   }
 
   Vector2 targetPositionFor(PieceComponent piece) {
