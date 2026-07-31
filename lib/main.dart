@@ -82,7 +82,15 @@ class MyApp extends StatelessWidget {
                   GoRoute(
                     path: 'loading',
                     pageBuilder: (context, state) {
-                      final jigsaw = state.extra! as JigsawInfo;
+                      if (state.extra == null) {
+                        return buildMyTransition(
+                          child: const MainMenuScreen(),
+                          color: context.watch<Palette>().backgroundMain,
+                        );
+                      }
+
+                      final jigsaw = state.extra as JigsawInfo;
+
                       return buildMyTransition<void>(
                         child: LoadingSelectionScreen(
                           key: const Key('loading session'),
@@ -95,16 +103,21 @@ class MyApp extends StatelessWidget {
                   GoRoute(
                     path: 'session',
                     pageBuilder: (context, state) {
-                      final jigsaw = state.extra! as JigsawInfo;
-                      return buildMyTransition<void>(
-                        child: PlaySessionScreen(
-                          jigsaw,
-                          key: const Key('play session'),
-                        ),
+                      if (state.extra == null) {
+                        return buildMyTransition(
+                          child: const MainMenuScreen(),
+                          color: context.watch<Palette>().backgroundMain,
+                        );
+                      }
+
+                      final jigsaw = state.extra as JigsawInfo;
+
+                      return buildMyTransition(
+                        child: PlaySessionScreen(jigsaw),
                         color: context.watch<Palette>().backgroundMain,
                       );
                     },
-                  ),
+                  )
                 ]),
             GoRoute(
                 path: 'settings',
@@ -167,6 +180,7 @@ class MyApp extends StatelessWidget {
 
               return MaterialApp.router(
                 builder: EasyLoading.init(),
+                debugShowCheckedModeBanner: false,
                 title: 'Real Puzzle',
                 theme: ThemeData.from(
                   colorScheme: ColorScheme.fromSeed(

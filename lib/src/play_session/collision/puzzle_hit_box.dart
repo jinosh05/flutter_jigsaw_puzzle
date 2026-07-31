@@ -16,4 +16,8 @@ class PuzzleHitbox extends RectangleHitbox {
   void inactive() {
     collisionType = CollisionType.inactive;
   }
+
+  void activate() {
+    collisionType = CollisionType.active;
+  }
 }

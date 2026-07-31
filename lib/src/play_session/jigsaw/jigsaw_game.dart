@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'dart:io';
 import 'dart:math' as math;
 import 'dart:math';
+import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:flame/components.dart';
@@ -17,90 +17,151 @@ import '../collision/puzzle_collision_detection.dart';
 import '../shape_type.dart';
 import 'image_utils.dart';
 import 'piece_component.dart';
+import 'piece_group.dart';
 
 class JigsawGame extends FlameGame with HasCollisionDetection {
   int gridSize = 6;
-  List<List<PieceComponent>> pieces = [[]];
+  List<List<PieceComponent>> pieces = [];
+  List<PieceComponent> allPieces = [];
+  ValueNotifier<List<PieceComponent>> unplacedPieces = ValueNotifier([]);
   List<Vector2> positions = [];
   double pieceSize = 0;
   JigsawInfo jigsawInfo;
   double _scale = 1.0;
-  bool isMusicOn;
+  bool isAudioOn;
   Function win;
+  double _imageWidth = 0;
+  double _imageHeight = 0;
+  double _widthPerBlock = 0;
+  double _heightPerBlock = 0;
+  Vector2 _puzzleOffset = Vector2.zero();
 
-  JigsawGame(this.jigsawInfo, this.isMusicOn, this.win);
+  JigsawGame(this.jigsawInfo, this.isAudioOn, this.win);
 
   @override
   Future<void> onLoad() async {
     collisionDetection = PuzzleCollisionDetection();
-    // add(FpsTextComponent(position: Vector2(0, 50)));
     var file = await DefaultCacheManager().getSingleFile(jigsawInfo.image);
-    Image image = await getFileImage(file);
-    _scale = ImageUtils.calculateScale(size.x / 3.0 * 2.0, size.y / 3.0 * 2.0,
-        image.width.toDouble(), image.height.toDouble());
-    debugPrint("scale:$_scale");
+    final bytes = await file.readAsBytes();
+    Image image = await decodeImageFromBytes(bytes);
+
     gridSize = jigsawInfo.gridSize;
-    final double widthPerBlock = image.width / gridSize;
-    final double heightPerBlock = image.height / gridSize;
-    pieceSize = min(widthPerBlock, heightPerBlock) / 4;
+    _imageWidth = image.width.toDouble();
+    _imageHeight = image.height.toDouble();
+
+    // Scale the assembled puzzle to fit inside the square board area.
+    _scale = ImageUtils.calculateScale(
+      size.x * 0.92,
+      size.y * 0.92,
+      _imageWidth,
+      _imageHeight,
+    );
+
+    _widthPerBlock = _imageWidth / gridSize;
+    _heightPerBlock = _imageHeight / gridSize;
+    pieceSize = min(_widthPerBlock, _heightPerBlock) / 4;
+    _updatePuzzleOffset();
+
     for (var y = 0; y < gridSize; y++) {
       final tmpPieces = <PieceComponent>[];
       pieces.add(tmpPieces);
       for (var x = 0; x < gridSize; x++) {
-        PieceComponent player =
-            getPiece(widthPerBlock, heightPerBlock, x, y, image);
-        pieces[y].add(player);
+        PieceComponent piece =
+            getPiece(_widthPerBlock, _heightPerBlock, x, y, image);
+        pieces[y].add(piece);
+        allPieces.add(piece);
       }
     }
-    positions.shuffle();
-    for (var y = 0; y < pieces.length; y++) {
-      for (var x = 0; x < pieces[y].length; x++) {
-        Vector2 position = positions[y * gridSize + x];
-        var piece = pieces[y][x];
-        if (piece.shape.topTab == 0) {
-          position.y = position.y + pieceSize * _scale;
-        }
-        if (piece.shape.leftTab == 0) {
-          position.x = position.x + pieceSize * _scale;
-        }
-        position.x = position.x + positionOffsetX;
-        piece.position = position;
-        add(piece);
-      }
+
+    // Initially, all pieces are in the list, not on the board
+    allPieces.shuffle();
+    unplacedPieces.value = List.from(allPieces);
+  }
+
+  void placePiece(PieceComponent piece) {
+    if (unplacedPieces.value.contains(piece)) {
+      // Position the piece in the center of the viewport initially
+      piece.position = clampPosition(
+        piece,
+        Vector2(size.x / 2 - piece.size.x / 2, size.y / 2 - piece.size.y / 2),
+      );
+      add(piece);
+      final updated = List<PieceComponent>.from(unplacedPieces.value)
+        ..remove(piece);
+      unplacedPieces.value = updated;
     }
+  }
+
+  bool showHint() {
+    if (unplacedPieces.value.isEmpty) return false;
+
+    final piece = unplacedPieces.value.first;
+    piece.position = clampPosition(piece, targetPositionFor(piece));
+    add(piece);
+    unplacedPieces.value = List<PieceComponent>.from(unplacedPieces.value)
+      ..remove(piece);
+    return true;
+  }
+
+  Vector2 targetPositionFor(PieceComponent piece) {
+    final leftTab = piece.shape.leftTab != 0 ? pieceSize * _scale : 0.0;
+    final topTab = piece.shape.topTab != 0 ? pieceSize * _scale : 0.0;
+    return _puzzleOffset + Vector2(
+          piece.xSort * _widthPerBlock * _scale - leftTab,
+          piece.ySort * _heightPerBlock * _scale - topTab,
+        );
+  }
+
+  Vector2 clampPosition(PieceComponent piece, Vector2 position) {
+    final maxX = max(0.0, size.x - piece.size.x);
+    final maxY = max(0.0, size.y - piece.size.y);
+    return Vector2(
+      position.x.clamp(0.0, maxX).toDouble(),
+      position.y.clamp(0.0, maxY).toDouble(),
+    );
+  }
+
+  void shuffleUnplacedPieces() {
+    final shuffled = List<PieceComponent>.from(unplacedPieces.value)..shuffle();
+    unplacedPieces.value = shuffled;
+  }
+
+  void returnAllPiecesToTray() {
+    for (final piece in children.whereType<PieceComponent>().toList()) {
+      piece.removeFromParent();
+      piece.group = PieceGroup(piece);
+      piece.priority = 0;
+      piece.reactivateHitboxes();
+    }
+    unplacedPieces.value = List.from(allPieces);
   }
 
   Future<void> getResult(int num, bool added) async {
     if (num == gridSize * gridSize) {
       debugPrint("getResult win:$num");
       win();
-      if (isMusicOn) {
+      if (isAudioOn) {
         FlameAudio.play('won.wav');
       }
     } else {
-      debugPrint("getResult isMusicOn:$isMusicOn");
-      if (added && isMusicOn) {
+      debugPrint("getResult isAudioOn:$isAudioOn");
+      if (added && isAudioOn) {
         FlameAudio.play('click.wav');
       }
     }
   }
 
-  Future<Image> getFileImage(File filePath) async {
-    var minHeight = (size.y / 3.0 * 2.0).toInt();
-    var minWidth = (size.x / 3.0 * 2.0).toInt();
-    debugPrint("minHeight:$minHeight minWidth:$minWidth");
-    // var list = await FlutterImageCompress.compressWithFile(
-    //   filePath,
-    //   minHeight: minHeight,
-    //   minWidth: minWidth,
-    //   quality: 99,
-    //   rotate: 0,
-    // );
+  // Helper to remove piece from list if it was already on board but then grouped
+  void onPieceAttached(PieceComponent piece) {
+    // This is called when a piece is successfully snapped
+    // We already handle removal in placePiece, but this is a safety check
+  }
 
+  Future<Image> decodeImageFromBytes(Uint8List bytes) async {
     final Completer<ui.Image> completer = Completer();
-    ui.decodeImageFromList(filePath.readAsBytesSync(), (ui.Image img) {
+    ui.decodeImageFromList(bytes, (ui.Image img) {
       debugPrint("image width:${img.width} image height:${img.height}:");
-      return completer.complete(img);
+      completer.complete(img);
     });
     return completer.future;
   }
@@ -108,7 +169,17 @@ class JigsawGame extends FlameGame with HasCollisionDetection {
   @override
   void onGameResize(Vector2 size) {
     super.onGameResize(size);
+    if (_imageWidth > 0 && _imageHeight > 0) {
+      _updatePuzzleOffset();
+    }
     debugPrint("onGameResize:$size");
+  }
+
+  void _updatePuzzleOffset() {
+    _puzzleOffset = Vector2(
+      max(0.0, (size.x - _imageWidth * _scale) / 2),
+      max(0.0, (size.y - _imageHeight * _scale) / 2),
+    );
   }
 
   PieceComponent getPiece(
@@ -140,7 +211,6 @@ class JigsawGame extends FlameGame with HasCollisionDetection {
       x,
       y,
     );
-    generatePositionBottom(widthPerBlock * _scale, heightPerBlock * _scale);
     return piece;
   }
 

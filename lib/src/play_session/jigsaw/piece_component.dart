@@ -1,4 +1,6 @@
 import 'package:flame/collisions.dart';
+import 'dart:math';
+
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/extensions.dart';
@@ -110,10 +112,26 @@ class PieceComponent extends PositionComponent
 
   //set position to child
   void setPosition(Vector2 p) {
-    // this.position = p;
-    // this.position.add(p);
+    final root = findParent() as JigsawGame;
+    final groupChildren = group.children;
+    var minX = double.infinity;
+    var minY = double.infinity;
+    var maxX = -double.infinity;
+    var maxY = -double.infinity;
+
+    for (final child in groupChildren) {
+      minX = min(minX, child.position.x);
+      minY = min(minY, child.position.y);
+      maxX = max(maxX, child.position.x + child.size.x);
+      maxY = max(maxY, child.position.y + child.size.y);
+    }
+
+    final deltaX = p.x.clamp(-minX, root.size.x - maxX).toDouble();
+    final deltaY = p.y.clamp(-minY, root.size.y - maxY).toDouble();
+    final boundedDelta = Vector2(deltaX, deltaY);
+
     for (PieceComponent child in group.children) {
-      child.position.add(p);
+      child.position.add(boundedDelta);
     }
   }
 
@@ -335,6 +353,13 @@ class PieceComponent extends PositionComponent
     }
 
     return path;
+  }
+
+  void reactivateHitboxes() {
+    topHitbox?.activate();
+    rightHitbox?.activate();
+    bottomHitbox?.activate();
+    leftHitbox?.activate();
   }
 
   String child() {

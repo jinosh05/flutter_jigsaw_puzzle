@@ -58,12 +58,12 @@ flutter:
   uses-material-design: true
 
   assets:
+    - .env
     - assets/images/
     - assets/music/
     - assets/sfx/
     - assets/lottie/
     - assets/audio/
-    - .env
 
 flutter_icons:
   android: true

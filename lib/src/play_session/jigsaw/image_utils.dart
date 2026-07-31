@@ -6,16 +6,10 @@ import 'package:flutter/foundation.dart';
 class ImageUtils {
   static double calculateScale(double targetSizeWidth, double targetSizeHeight,
       double imageSizeWidth, double imageSizeHeight) {
-    double scale = 1.0;
-    if (imageSizeWidth > targetSizeWidth ||
-        imageSizeHeight > targetSizeHeight) {
-      scale = min(
-          targetSizeWidth / imageSizeWidth, targetSizeHeight / imageSizeHeight);
-    } else {
-      scale = max(
-          targetSizeWidth / imageSizeWidth, targetSizeHeight / imageSizeHeight);
-    }
-    return scale;
+    return min(
+      targetSizeWidth / imageSizeWidth,
+      targetSizeHeight / imageSizeHeight,
+    );
   }
 
   static Vector2 fitCenter(
